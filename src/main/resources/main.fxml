@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="550" prefWidth="950" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.xml.processor.controller.MainController">
+   <center>
+      <TabPane fx:id="TABPANE" side="BOTTOM" tabClosingPolicy="ALL_TABS" />
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#createNewTab" text="New tab" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeCurrentTab" text="Close tab" />
+                  <MenuItem mnemonicParsing="false" onAction="#closeAllTabs" text="Close all tabs" />
+              <MenuItem mnemonicParsing="false" onAction="#quit" text="Quit" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="View">
+            <items>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#setHorizantalView" text="Horizantal View">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="viewToggleGroup" />
+                     </toggleGroup></RadioMenuItem>
+                  <RadioMenuItem mnemonicParsing="false" onAction="#setVerticalView" selected="true" text="Vertical View" toggleGroup="$viewToggleGroup" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

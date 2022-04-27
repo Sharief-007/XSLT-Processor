@@ -1,0 +1,1 @@
+jpackage --type app-image -i target -n xslt-processor --main-jar xslt-processor-0.1.jar --win-console --dest bin --icon logo.ico --verbose

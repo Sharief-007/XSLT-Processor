@@ -1,0 +1,11 @@
+app\xml\processor\controller\SplitPaneController$1.class
+app\xml\processor\enums\MessageType.class
+app\xml\processor\controller\SplitPaneController.class
+app\xml\processor\XsltProcessorApplication.class
+app\xml\processor\events\StageReadyEvent.class
+app\xml\processor\events\Operations.class
+app\xml\processor\listeners\StageInitializer.class
+app\xml\processor\controller\MainController.class
+app\xml\processor\fxml\FileLoader.class
+app\xml\processor\enums\TextBoxType.class
+app\xml\processor\JavaFxApplication.class

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+
+<SplitPane dividerPositions="0.333, 0.666" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.xml.processor.controller.SplitPaneController">
+   <items>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="3.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="3.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Source :">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Text>
+                        <Label fx:id="SOURCEFILEPATH" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="OPENSOURCEBTN" mnemonicParsing="false" onAction="#openSource" text="Source File">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FILE" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="SAVESOURCEBTN" mnemonicParsing="false" onAction="#saveSource" text="Save">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="PRETTYBTN" mnemonicParsing="false" onAction="#prettyPrintSource" text="Format">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CODE" />
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="5.0" right="5.0" />
+               </padding>
+            </HBox>
+            <TextArea fx:id="SOURCEXML" promptText="Source XML" wrapText="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Consolas" size="13.0" />
+               </font>
+            </TextArea>
+         </children>
+      </VBox>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="3.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="3.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Mapping : " />
+                        <Label fx:id="MAPPINGFILEPATH" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="OPENMAPBTN" mnemonicParsing="false" onAction="#openMapping" text="Mapping File">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="FOLDER" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="SAVEMAPBTN" mnemonicParsing="false" onAction="#saveMapping" text="Save">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TextArea fx:id="MAPPINGXST" promptText="Mapping XSL" wrapText="true" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Consolas" size="13.0" />
+               </font>
+            </TextArea>
+         </children>
+      </VBox>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <HBox spacing="3.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="3.0" HBox.hgrow="ALWAYS">
+                     <HBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </HBox.margin>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Target : " />
+                        <Label fx:id="TARGETFILEPATH" />
+                     </children>
+                  </HBox>
+                  <Button fx:id="RUN" mnemonicParsing="false" onAction="#runTransformation" text="Run">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CARET_RIGHT" />
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="SAVETARGETBTN" mnemonicParsing="false" onAction="#saveTarget" text="Save">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="SAVE" />
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            <TabPane side="RIGHT" style="-fx-background-color: white" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+               <tabs>
+                  <Tab closable="false" text="Raw View">
+                     <content>
+                        <TextArea fx:id="TARGETXML" promptText="Output" wrapText="true">
+                           <font>
+                              <Font name="Consolas" size="13.0" />
+                           </font>
+                        </TextArea>
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Web View">
+                     <content>
+                        <WebView fx:id="WEBVIEW" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </items>
+</SplitPane>
